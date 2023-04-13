@@ -1,3 +1,215 @@
-body {
-  font-family: sans-serif, arial;
+* {
+  box-sizing: border-box;
 }
+
+body {
+  font-family: sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+#add-movie-bar {
+  display: block;
+  margin: auto;
+  max-width: 700px;
+  font-size: 1.4rem;
+}
+#add-movie-bar input {
+  margin: 0;
+  width: 80%;
+  background-color: rgb(235, 235, 235);
+  border: 0;
+  border-bottom: 5px solid teal;
+  padding: 15px;
+  padding-bottom: 10px;
+}
+#add-movie-bar input:focus {
+  outline: none;
+  background-color: white;
+}
+#add-movie-bar button {
+  margin: 0;
+  width: 20%;
+  color: white;
+  border: 0;
+  background-color: teal;
+  border-bottom: 5px solid teal;
+  padding: 15px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+#add-movie-bar button:hover {
+  background-color: #008f8f;
+  border-bottom: 5px solid #008f8f;
+}
+
+#wrapper {
+  width: 60%;
+  margin: 2rem auto;
+  background-color: white;
+  border: 1px solid rgb(106, 106, 106);
+  border-radius: 10px;
+}
+
+#filter-buttons button {
+  cursor: pointer;
+  position: relative;
+  left: 10px;
+  font-size: 1.2rem;
+  padding: 10px 15px;
+  background-color: rgb(220, 239, 245);
+  border: 0;
+}
+#filter-buttons button:hover {
+  color: teal;
+}
+#filter-buttons button.active {
+  color: teal;
+  font-weight: bold;
+  border: 1px solid rgb(106, 106, 106);
+  padding: 20px 15px;
+  position: relative;
+  background-color: white;
+  bottom: 10px;
+  border-bottom: 0;
+  border-radius: 5px 5px 0 0;
+}
+
+#search-box {
+  font-size: 1.1rem;
+  position: relative;
+  left: 30px;
+}
+#search-box input {
+  width: 50%;
+  padding: 10px;
+  padding-bottom: 5px;
+  border: 0;
+  background-color: transparent;
+  border-bottom: 2px solid black;
+}
+#search-box input:focus {
+  outline: none;
+  border-color: teal;
+}
+#search-box button {
+  padding: 10px;
+  padding-bottom: 5px;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+#search-box button:hover {
+  color: cadetblue;
+}
+
+#movie-container {
+  padding: 0;
+  margin: 30px 0;
+}
+#movie-container .not-here {
+  font-size: 1.3rem;
+  padding: 10px;
+  display: block;
+  color: rgb(106, 106, 106);
+  text-align: center;
+}
+#movie-container ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+#movie-container ul button {
+  cursor: pointer;
+  padding: 10px;
+  border: 0;
+  border-radius: 10px;
+  border: 1px solid rgb(106, 106, 106);
+}
+#movie-container ul .watched {
+  background-color: rgb(187, 255, 187);
+}
+#movie-container ul .not-watched {
+  background-color: rgb(210, 210, 210);
+}
+#movie-container ul .entry {
+  font-size: 1.2rem;
+  display: block;
+  border-top: 1px solid rgb(106, 106, 106);
+  border-bottom: 1px solid rgb(106, 106, 106);
+  padding: 20px;
+  position: relative;
+  background-color: rgb(236, 236, 236);
+}
+#movie-container ul .entry:hover {
+  background-color: rgb(210, 210, 210);
+}
+#movie-container ul .entry:hover details {
+  background-color: #b9b9b9;
+}
+#movie-container ul .entry button {
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+}
+#movie-container ul .entry .title {
+  cursor: pointer;
+}
+#movie-container ul .entry .title:hover {
+  text-decoration: underline;
+}
+
+.details {
+  background-color: rgb(236, 236, 236);
+  height: 400px;
+  width: 110%;
+  margin-top: 20px;
+  position: relative;
+  transform: translateX(-50%);
+  left: 50%;
+  bottom: 10px;
+  border-radius: 10px;
+  border: 2px solid black;
+  border-top: none;
+  border-bottom: none;
+  color: white;
+}
+.details table {
+  border-collapse: collapse;
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.details table tr {
+  margin: 10px;
+  display: block;
+}
+.details table tr th {
+  display: inline-block;
+  color: white;
+  background-color: teal;
+  padding: 10px 20px;
+  width: 200px;
+  text-align: center;
+}
+.details table tr td {
+  display: inline-block;
+  color: black;
+  background-color: white;
+  padding: 10px 20px;
+  width: 150px;
+}
+.details img {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 2px solid white;
+  border-radius: 10px;
+}
+
+/*# sourceMappingURL=style.css.map */

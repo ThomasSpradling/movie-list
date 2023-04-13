@@ -6,7 +6,7 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "start": "nodemon server/index.js",
+    "start": "nodemon server/index.js & npm run react-dev & sass --watch client/styles/style.scss client/dist/style.css",
     "react-dev": "webpack --config ./webpack.config.js  -w"
   },
   "devDependencies": {
@@ -22,8 +22,11 @@
   "dependencies": {
     "axios": "^0.21.1",
     "express": "^4.17.1",
+    "jquery": "^3.6.4",
+    "normalize": "^0.3.1",
+    "normalize.css": "^8.0.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "underscore": "^1.12.1"
+    "underscore": "^1.13.6"
   }
 }
