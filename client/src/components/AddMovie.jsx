@@ -1,5 +1,6 @@
 import React from 'react';
 import _ from 'underscore';
+import Parse from '../parse';
 
 const AddMovie = ({ titleText, setTitleText, movieList, setMovieList, searchTMDB, getMovie }) => {
   return (
@@ -14,17 +15,30 @@ const AddMovie = ({ titleText, setTitleText, movieList, setMovieList, searchTMDB
         };
 
         searchTMDB(titleText, (data) => {
-          const movie = data.results[0];
-          getMovie(movie.id, (movieData) => {
-            newMovie = movieData;
-            newMovie.watched = false;
-            newMovie.showDetails = false;
+          const row = data.results[0];
+          getMovie(row.id, (movieData) => {
+            const movie = {
+              title: movieData.title,
+              year: Number(row.release_date.substring(0, 4)),
+              runtime: movieData.runtime,
+              status: movieData.status,
+              votes: Number(row.vote_average),
+              poster: row.poster_path,
+              watched: 0
+            };
+            const t = movie;
+            t.showDetails = false;
 
-            temp.push(newMovie);
-            console.log(newMovie);
+            temp.push(t);
 
             setMovieList(temp);
             setTitleText('');
+
+            Parse.create(movie, () => {
+              Parse.readAll(data => {
+                setMovieList(data);
+              });
+            });
           });
         });
       }}>

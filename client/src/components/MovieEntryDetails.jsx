@@ -1,14 +1,14 @@
 import React from 'react';
 
 const MovieEntryDetails = ({ movie, handlerWatch }) => {
-  const poster_url = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
-  const backdrop_url = `https://image.tmdb.org/t/p/w500${movie.backdrop}`
+  const poster_url = `https://image.tmdb.org/t/p/w500${movie.poster}`;
   return (
-    <div className='details' style={{backgroundImage: `url('${backdrop_url}')`}}>
+    <div className='details'>
+      {/* <div>{ movie.overview }</div> */}
       <img className='poster' height='375' src={ poster_url }/>
       <table className='detailsList'>
         <tr>
-          <th>Year</th><td>{ movie.release_date.substring(0, 4) }</td>
+          <th>Year</th><td>{ movie.year }</td>
         </tr>
         <tr>
           <th>Runtime</th><td>{ movie.runtime } min</td>
@@ -17,7 +17,7 @@ const MovieEntryDetails = ({ movie, handlerWatch }) => {
           <th>Status</th><td>{ movie.status }</td>
         </tr>
         <tr>
-          <th>Vote Average</th><td>{ movie.vote_average } / 10</td>
+          <th>Vote Average</th><td>{ movie.vote } / 10</td>
         </tr>
         <tr>
           <th style={{backgroundColor: 'lightblue'}}>Watched</th><td>{ movie.watched ? 'Yes' : 'No' }</td>

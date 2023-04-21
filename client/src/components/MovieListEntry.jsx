@@ -1,5 +1,6 @@
 import React from 'react';
 import MovieEntryDetails from './MovieEntryDetails.jsx';
+import Parse from '../parse';
 
 const MovieListEntry = ({ movie, movieList, setMovieList }) => {
   //const [showDetails, setShowDetails] = React.useState(false);
@@ -7,8 +8,10 @@ const MovieListEntry = ({ movie, movieList, setMovieList }) => {
   const handlerWatch = () => {
     const temp = movieList.slice();
     for (let i = 0; i < temp.length; i++) {
-      if (temp[i].title === movie.title) {
+      if (temp[i].id === movie.id) {
         temp[i].watched = !temp[i].watched;
+
+        Parse.update(movie.id, 'watched', Number(temp[i].watched));
       }
     }
     setMovieList(temp);

@@ -1,4 +1,5 @@
 import React from 'react';
+import Parse from '../parse';
 // import { useState } from React;
 
 import exampleMovieData from '../data/exampleData.js';
@@ -12,6 +13,12 @@ const App = ({ searchTMDB, getMovie }) => {
   const [movieList, setMovieList] = React.useState([]);
   const [titleText, setTitleText] = React.useState('');
   const [filter, setFilter] = React.useState('all');
+
+  React.useEffect(() => {
+    Parse.readAll(data => {
+      setMovieList(data);
+    });
+  }, []);
 
   return (
     <div>
